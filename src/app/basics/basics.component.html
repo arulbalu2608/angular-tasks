@@ -1,0 +1,37 @@
+<div>
+    <div class="card">
+        <h1>{{count}}</h1>
+        <button (click)="inc()">Inc</button>
+        <button (click)="dec()">Dec</button>
+        <button (click)="incBy(5)">Inc By 5</button>
+    </div>
+    <div class="card">
+        <button (click)="handleShowContent()">{{buttonText}}</button>
+        <p *ngIf="showContent;else elseBlock">Please Login</p>
+        <ng-template #elseBlock>
+            <p>Welcome Arul.</p>
+        </ng-template>
+    </div>
+
+    <div class="card">
+        <div *ngFor="let data of fruits">
+            {{data}}
+        </div>
+    </div>
+    <div class="card">
+        <div *ngFor="let data of contactList">
+            {{data.name}} -- {{data.age}}
+        </div>
+    </div>
+    <div class="card">
+        <input class="inputBox" [(ngModel)]="userName" />
+        <p>{{userName}}</p>
+    </div>
+
+    <div class="card">
+        <p>{{title}}</p>
+        <button (click)="sendData()">Send Data to Parent</button>
+    </div>
+
+
+</div>

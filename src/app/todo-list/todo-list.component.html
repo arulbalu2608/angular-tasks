@@ -1,0 +1,33 @@
+<div class="container">
+    <div>
+        <p class="title">Todo-list works!</p>
+        <div class="d-flex">
+            <input [(ngModel)]="todoService.content" class="inputBox" />
+            <button [disabled]="todoService.content==''" (click)="addContent()">Add</button>
+        </div>
+
+        <div class="table">
+            <table class="table table-striped">
+                <thead>
+                    <th>S.no</th>
+                    <th>Content</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of todoService.todoList; index as i">
+                        <td>{{i+1}}</td>
+                        <td>{{data?.content}}</td>
+                        <td>
+                            <div class="d-flex">
+                                <button (click)="editContent(data.id)">Edit</button>
+                                <button (click)="deleteContent(data.id)">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</div>
